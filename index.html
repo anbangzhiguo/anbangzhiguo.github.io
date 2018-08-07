@@ -17,7 +17,7 @@
 		<div class="shape">笑影</div>
 		<div class="shape">老婆</div>
 		<div class="shape">Happy</div>
-		<div class="shape">Birthdy</div>
+		<div class="shape">Birthday</div>
 	</div>
 	<script>
 		var canvas = document.getElementById("cas");
@@ -27,7 +27,7 @@
 		ocas.width = canvas.width = window.innerWidth;
 		ocas.height = canvas.height = window.innerHeight;
 		var bigbooms = [];
-	
+		var n = 0;
 		window.onload = function(){
 			initAnimate()
 		}
@@ -49,7 +49,7 @@
 
 			var newTime = new Date();
             if(newTime-lastTime>300+(window.innerHeight-767)/2){
-				var random = Math.random()*100>30?true:false;
+				var random = Math.random()*1000>300?true:false;
 				var x = getRandom(canvas.width/5 , canvas.width*4/5);
 				var y = getRandom(50 , 200);
 				if(random){
@@ -57,7 +57,9 @@
 					bigbooms.push(bigboom)
 				}
 				else {
-					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,2,"#FFF" , {x:canvas.width/2 , y:200} , document.querySelectorAll(".shape")[parseInt(getRandom(0, document.querySelectorAll(".shape").length))]);
+					n++
+					if(n>=4) n=0;
+					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,2,"#FFF" , {x:canvas.width/2 , y:200} , document.querySelectorAll(".shape")[n]);
 					bigbooms.push(bigboom)
 				}
 				lastTime = newTime;
