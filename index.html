@@ -131,35 +131,7 @@
         constructor(props) {
             super(props);
             this.state = {
-                allCards:this.createCard()
-                /**
-                [
-                    {key:'101',text:'A',levle:0,parent:'',left:110,top:10},
-                    {key:'102',text:'B',levle:0,parent:'',left:165,top:10},
-                    {key:'103',text:'A',levle:0,parent:'',left:220,top:10},
-                    {key:'104',text:'C',levle:0,parent:'',left:110,top:95},
-                    {key:'105',text:'D',levle:0,parent:'',left:165,top:95},
-                    {key:'106',text:'E',levle:0,parent:'',left:220,top:95},
-                    {key:'107',text:'A',levle:0,parent:'',left:110,top:180},                 
-                    {key:'108',text:'B',levle:0,parent:'',left:165,top:180},
-                    {key:'109',text:'E',levle:0,parent:'',left:220,top:180}, 
-
-                    {key:'110',text:'E',levle:1,parent:'',left:130,top:30},
-                    {key:'111',text:'B',levle:1,parent:'',left:185,top:30},
-                    {key:'112',text:'C',levle:1,parent:'',left:130,top:125},
-                    {key:'113',text:'C',levle:1,parent:'',left:185,top:125},
-                    
-                    {key:'114',text:'C',levle:0,parent:'',left:240,top:305},
-                    {key:'115',text:'C',levle:1,parent:'',left:240,top:310},
-                    {key:'116',text:'D',levle:2,parent:'',left:240,top:315}, 
-                    {key:'117',text:'D',levle:3,parent:'',left:240,top:320},
-                    {key:'118',text:'E',levle:4,parent:'',left:240,top:325},
-                    {key:'119',text:'F',levle:5,parent:'',left:240,top:330},
-                    {key:'120',text:'F',levle:6,parent:'',left:240,top:335},
-                    {key:'121',text:'F',levle:7,parent:'',left:240,top:340}
-                    
-                ]
-                **/
+                allCards:this.createCard()          
             };
         }
 
@@ -168,22 +140,26 @@
             let arr = ['A','B','C','D','E','F','G','H','J','K','L','M','N']
             
             for(let i=0;i<40;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:0,parent:'',left:110+parseInt(i/6)*55,top:10+(i%6)*85})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:0,parent:'',left:90+parseInt(i/6)*58,top:10+(i%6)*90})
             }
             
            
             for(let i=40;i<70;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1,parent:'',left:130+parseInt((i-40)/5)*55,top:20+(i%5)*90})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1,parent:'',left:110+parseInt((i-40)/5)*58,top:40+(i%5)*105})
             }
             
             
             for(let i=70;i<90;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:2,parent:'',left:150+parseInt((i-70)/4)*55,top:30+i%4*100})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:2,parent:'',left:120+parseInt((i-70)/4)*65,top:80+i%4*110})
+            }
+
+            for(let i=90;i<105;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:3,parent:'',left:130+parseInt((i-90)/3)*67,top:125+i%3*120})
             }
             
 
-            for(let i=90;i<120;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1%90,parent:'',left:500,top:30+i%90*8})
+            for(let i=105;i<140;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1%105,parent:'',left:540+i%10*3,top:30+i%105*12})
             }
             return allCards
 
@@ -277,7 +253,7 @@
                         left: this[t].state.left+stepLeft
                     }));
                 }
-            },5)
+            },10)
         }  
 
         render() {
@@ -289,7 +265,7 @@
                     bottom: 100,
                     left: 50,
                     width: 650,
-                    height: 800
+                    height: 900
                 }} >
                     <CardSlot ref={foo => {this.cardSlot = foo}}/>
                     {
@@ -328,7 +304,7 @@
                         margin:3,
                         fontWeight:900,
                         boxShadow: '6px 6px 7px #000000',
-                        border: 'white 2px solid',
+                        border: 'white 4px solid',
                         display:this.state.dis=='1'?'block':'none'
                     }
                 } onClick={this.handleClick}>
