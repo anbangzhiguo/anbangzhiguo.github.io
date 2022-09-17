@@ -261,6 +261,7 @@
                     this.cardSlot.setState(prevState => (slotState)); 
                     if(snum == 7){
                         alert('Game Over')
+                        location.reload();
                     }  
                 }else{
                     this[t].setState(prevState => ({
