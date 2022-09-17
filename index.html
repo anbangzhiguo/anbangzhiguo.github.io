@@ -27,6 +27,14 @@
                         background-size:cover;}
             .J{background-image: url(https://img0.baidu.com/it/u=3372864484,86401414&fm=253&fmt=auto&app=138&f=JPEG?w=160&h=109);
                             background-size:cover;}
+            .K{background-image: url(https://img0.baidu.com/it/u=2447232726,212069368&fm=253&fmt=auto?w=200&h=200);
+                background-size:cover;}
+            .L{background-image: url(https://img2.baidu.com/it/u=3788646889,2975336153&fm=253&fmt=auto?w=200&h=200);
+                background-size:cover;}
+            .M{background-image: url(https://img1.baidu.com/it/u=1035241979,2591366575&fm=253&fmt=auto?w=130&h=170);
+                background-size:cover;}
+            .N{background-image: url(https://img0.baidu.com/it/u=1257446861,475247806&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200);
+                background-size:cover;}
 
             body{
                 background: url(https://img2.baidu.com/it/u=3202063201,1142127465&fm=253&fmt=auto&app=138&f=JPEG?w=254&h=154);
@@ -157,25 +165,25 @@
 
         createCard(){
             let allCards = []
-            let arr = ['A','B','C','D','E','F','G','H','J']
+            let arr = ['A','B','C','D','E','F','G','H','J','K','L','M','N']
             
             for(let i=0;i<40;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:0,parent:'',left:110+parseInt(i/6)*55,top:10+(i%6)*85})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:0,parent:'',left:110+parseInt(i/6)*55,top:10+(i%6)*85})
             }
             
            
             for(let i=40;i<70;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1,parent:'',left:130+parseInt((i-40)/5)*55,top:20+(i%5)*90})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1,parent:'',left:130+parseInt((i-40)/5)*55,top:20+(i%5)*90})
             }
             
             
             for(let i=70;i<90;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:2,parent:'',left:150+parseInt((i-70)/4)*55,top:30+i%4*100})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:2,parent:'',left:150+parseInt((i-70)/4)*55,top:30+i%4*100})
             }
             
 
             for(let i=90;i<120;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1%90,parent:'',left:500,top:30+i%90*8})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:1%90,parent:'',left:500,top:30+i%90*8})
             }
             return allCards
 
