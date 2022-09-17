@@ -131,7 +131,8 @@
         constructor(props) {
             super(props);
             this.state = {
-                allCards:this.createCard()          
+                allCards:this.createCard(),
+                canClick:true         
             };
         }
 
@@ -191,7 +192,15 @@
                 }
             }
 
+            
             if(haveCover) return;
+            if(this.state.canClick){
+                this.setState(prevState => ({
+                    canClick:false
+                }));
+            }else{
+                return;
+            }
 
             this.backInterval = setInterval(()=>{
                 if(this[t].state.top >= 680){
@@ -203,7 +212,8 @@
                     let allCardsTemp = this.state.allCards
                     allCardsTemp.splice(selectIndex, 1);
                     this.setState(prevState => ({
-                        allCards:allCardsTemp
+                        allCards:allCardsTemp,
+                        canClick:true
                     })); 
 
                     let slotnum = {}
