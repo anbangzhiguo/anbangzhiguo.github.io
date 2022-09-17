@@ -139,6 +139,7 @@
             let allCards = []
             let arr = ['A','B','C','D','E','F','G','H','J','K','L','M','N']
             
+            
             for(let i=0;i<40;i++){
                 allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:0,parent:'',left:90+parseInt(i/6)*58,top:10+(i%6)*90})
             }
@@ -159,7 +160,7 @@
             
 
             for(let i=105;i<140;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*13)],levle:i%105,parent:'',left:540+i%10*3,top:30+i%105*12})
+                allCards.push({key:(100+i)+'cart',text:arr[Math.floor(Math.random()*13)],levle:i%105,parent:'',left:540+i%10*3,top:30+i%105*12})
             }
             return allCards
 
@@ -168,7 +169,7 @@
         handleClick(t) {
             let targetLeft = 65+(3*70)
             let diffLeft = targetLeft-this[t].state.left
-            let stepLeft = diffLeft*5/(535-this[t].state.top)
+            let stepLeft = diffLeft*5/(680-this[t].state.top)
 
             let selectItem,selectIndex
             for(let i=0;i<this.state.allCards.length;i++){
@@ -193,7 +194,7 @@
             if(haveCover) return;
 
             this.backInterval = setInterval(()=>{
-                if(this[t].state.top >= 650){
+                if(this[t].state.top >= 680){
                     clearInterval(this.backInterval)
                     this[t].setState(prevState => ({
                         dis: '0'
