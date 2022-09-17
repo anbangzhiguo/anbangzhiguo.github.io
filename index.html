@@ -4,15 +4,28 @@
         <meta charset="UTF-8">
         <meta name="Zhou Zhengwei" content="anbangzhiguo@163.com">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=0.6">
-        <title>羊了个羊网页版</title>
+        <title>羊了个羊网面版</title>
         <style>
-            .A{background-color:hsl(254, 81%, 42%);}
-            .B{background-color:#8B4513;}
-            .C{background-color:hsl(129, 87%, 46%);}
-            .D{background-color:#FFF5EE;}
-            .E{background-color:#DA70D6;}
-            .F{background-color:#BC8F8F;}
+            .A{
+                background-image: url(https://img0.baidu.com/it/u=2915591120,58539746&fm=253&fmt=auto&app=138&f=JPEG?w=50&h=75);
+                background-size:cover;
+            }
+            .B{background-image: url(https://img2.baidu.com/it/u=1961605168,519023852&fm=253&fmt=auto&app=120&f=JPEG?w=200&h=200);
+                background-size:cover;}
+            .C{background-image: url(https://img1.baidu.com/it/u=1558460227,1600052005&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200);
+                background-size:cover;}
+            .D{background-image: url(https://img0.baidu.com/it/u=1367134673,2529600782&fm=253&fmt=auto&app=120&f=JPEG?w=200&h=200);
+                background-size:cover;}
+            .E{background-image: url(https://img1.baidu.com/it/u=2342405275,30063627&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200);
+                background-size:cover;}
+            .F{background-image: url(https://img2.baidu.com/it/u=794796699,2048913638&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200);
+                background-size:cover;}
+            .G{background-image: url(https://img2.baidu.com/it/u=2804974022,2583629637&fm=253&fmt=auto&app=138&f=JPEG?w=120&h=80);
+                    background-size:cover;}
+            .H{background-image: url(https://img1.baidu.com/it/u=961754899,2161050074&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200);
+                        background-size:cover;}
+            .J{background-image: url(https://img0.baidu.com/it/u=3372864484,86401414&fm=253&fmt=auto&app=138&f=JPEG?w=160&h=109);
+                            background-size:cover;}
 
             body{
                 background: url(https://img2.baidu.com/it/u=3202063201,1142127465&fm=253&fmt=auto&app=138&f=JPEG?w=254&h=154);
@@ -35,8 +48,8 @@
         <div id="gameroom" style="float:left">
         </div>
         <div style="float:none"></div>
-        <div style="float:left;width:110px;font-size:100px;font-weight:900;">
-            <div style="width:100px;">羊了个羊</div>
+        <div style="float:left;width:110px;font-size:80px;font-weight:900;">
+            <div style="width:80px;padding-top:80px;">羊了个羊</div>
         </div>
     </body>
 </html>
@@ -60,7 +73,7 @@
                 return (<div class={s} style={
                     {
                         width:'50px',
-                        height:'50px',
+                        height:'75px',
                         position: 'absolute',
                         textAlign: 'center',
                         top: 5,
@@ -69,7 +82,7 @@
                         fontWeight:900
                     }
                 }>
-            {s}
+        
             </div>)
             }else{
                 return ''
@@ -77,26 +90,26 @@
         }
         render() {
             return (
-              <div style={{position: 'absolute',display:'block',bottom: 10,left: 50, width: 500,height: 60,backgroundColor: '#00ff00'}}>
-                  <div style={{display:'inline-block',position: 'absolute',width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+              <div style={{position: 'absolute',display:'block',bottom: 10,left: 50, width: 500,height: 90,backgroundColor: '#00ff00'}}>
+                  <div style={{display:'inline-block',position: 'absolute',width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot0)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:70,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:70,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot1)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:140,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:140,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot2)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:210,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:210,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot3)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:280,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:280,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot4)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:350,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:350,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot5)}
                   </div>
-                  <div style={{display:'inline-block',position: 'absolute',left:420,width: 60,height: 60,backgroundColor: 'red',marginLeft:10}}>
+                  <div style={{display:'inline-block',position: 'absolute',left:420,width: 60,height: 90,backgroundColor: 'red',marginLeft:10}}>
                     {this.disCard(this.state.slot6)}
                   </div>
                  
@@ -109,13 +122,15 @@
         constructor(props) {
             super(props);
             this.state = {
-                allCards:[
+                allCards:this.createCard()
+                /**
+                [
                     {key:'101',text:'A',levle:0,parent:'',left:110,top:10},
                     {key:'102',text:'B',levle:0,parent:'',left:165,top:10},
                     {key:'103',text:'A',levle:0,parent:'',left:220,top:10},
                     {key:'104',text:'C',levle:0,parent:'',left:110,top:95},
                     {key:'105',text:'D',levle:0,parent:'',left:165,top:95},
-                    {key:'106',text:'C',levle:0,parent:'',left:220,top:95},
+                    {key:'106',text:'E',levle:0,parent:'',left:220,top:95},
                     {key:'107',text:'A',levle:0,parent:'',left:110,top:180},                 
                     {key:'108',text:'B',levle:0,parent:'',left:165,top:180},
                     {key:'109',text:'E',levle:0,parent:'',left:220,top:180}, 
@@ -128,14 +143,41 @@
                     {key:'114',text:'C',levle:0,parent:'',left:240,top:305},
                     {key:'115',text:'C',levle:1,parent:'',left:240,top:310},
                     {key:'116',text:'D',levle:2,parent:'',left:240,top:315}, 
-                    {key:'117',text:'F',levle:3,parent:'',left:240,top:320},
+                    {key:'117',text:'D',levle:3,parent:'',left:240,top:320},
                     {key:'118',text:'E',levle:4,parent:'',left:240,top:325},
                     {key:'119',text:'F',levle:5,parent:'',left:240,top:330},
-                    {key:'120',text:'D',levle:6,parent:'',left:240,top:335},
+                    {key:'120',text:'F',levle:6,parent:'',left:240,top:335},
                     {key:'121',text:'F',levle:7,parent:'',left:240,top:340}
                     
                 ]
+                **/
             };
+        }
+
+        createCard(){
+            let allCards = []
+            let arr = ['A','B','C','D','E','F','G','H','J']
+            
+            for(let i=0;i<40;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:0,parent:'',left:110+parseInt(i/6)*52,top:10+(i%6)*77})
+            }
+            
+           
+            for(let i=40;i<70;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1,parent:'',left:130+parseInt((i-40)/5)*52,top:20+(i%5)*77})
+            }
+            
+            
+            for(let i=70;i<90;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:2,parent:'',left:150+parseInt((i-70)/4)*52,top:30+i%4*77})
+            }
+            
+
+            for(let i=90;i<120;i++){
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1%90,parent:'',left:500,top:30+i%90*5})
+            }
+            return allCards
+
         }
         
         handleClick(t) {
@@ -274,12 +316,13 @@
                         top: this.state.top,
                         left: this.state.left,
                         fontSize:40,
+                        margin:3,
                         fontWeight:900,
-                        boxShadow: '2px 2px 4px #000000',
+                        boxShadow: '6px 6px 7px #000000',
                         display:this.state.dis=='1'?'block':'none'
                     }
                 } onClick={this.handleClick}>
-                {this.props.name}
+                
             </div>
           );
         }
