@@ -160,22 +160,22 @@
             let arr = ['A','B','C','D','E','F','G','H','J']
             
             for(let i=0;i<40;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:0,parent:'',left:110+parseInt(i/6)*52,top:10+(i%6)*77})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:0,parent:'',left:110+parseInt(i/6)*55,top:10+(i%6)*85})
             }
             
            
             for(let i=40;i<70;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1,parent:'',left:130+parseInt((i-40)/5)*52,top:20+(i%5)*77})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1,parent:'',left:130+parseInt((i-40)/5)*55,top:20+(i%5)*90})
             }
             
             
             for(let i=70;i<90;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:2,parent:'',left:150+parseInt((i-70)/4)*52,top:30+i%4*77})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:2,parent:'',left:150+parseInt((i-70)/4)*55,top:30+i%4*100})
             }
             
 
             for(let i=90;i<120;i++){
-                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1%90,parent:'',left:500,top:30+i%90*5})
+                allCards.push({key:(100+i)+'',text:arr[Math.floor(Math.random()*9)],levle:1%90,parent:'',left:500,top:30+i%90*8})
             }
             return allCards
 
@@ -209,7 +209,7 @@
             if(haveCover) return;
 
             this.backInterval = setInterval(()=>{
-                if(this[t].state.top >= 535){
+                if(this[t].state.top >= 650){
                     clearInterval(this.backInterval)
                     this[t].setState(prevState => ({
                         dis: '0'
@@ -280,8 +280,8 @@
                     top:50,
                     bottom: 100,
                     left: 50,
-                    width: 600,
-                    height: 600,
+                    width: 650,
+                    height: 800,
                     backgroundColor: 'rgba(0, 255, 15,0.5)'
                 }} >
                     <CardSlot ref={foo => {this.cardSlot = foo}}/>
@@ -321,6 +321,7 @@
                         margin:3,
                         fontWeight:900,
                         boxShadow: '6px 6px 7px #000000',
+                        border: 'white 2px solid',
                         display:this.state.dis=='1'?'block':'none'
                     }
                 } onClick={this.handleClick}>
