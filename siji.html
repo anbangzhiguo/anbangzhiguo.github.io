@@ -1,0 +1,219 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    [dg-cloak] {
+      display: none !important;
+    }
+    body {
+        margin: 40px 0;
+        font-family: "Raleway";
+        font-size: 14px;
+        font-weight: 500;
+        background-color: #bcaaa4;
+        -webkit-font-smoothing: antialiased;
+        background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.tuchuanhuwai.com%2Fwp-content%2Fuploads%2F2019%2F12%2Ffrc-81021b0cc91f15193f5c6812127f72bd.jpeg&refer=http%3A%2F%2Fwww.tuchuanhuwai.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666532266&t=7be03bc38fa4721044fe96557e7e7f7b);
+        background-size: cover;
+      }
+      
+      .title {
+        font-family: "Raleway";
+        font-size: 34px;
+        font-weight: 700;
+        color: #62e511;
+        text-align: center;
+      }
+      
+      p {
+        line-height: 1.5em;
+      }
+      
+      h1 + p,
+      p + p {
+        margin-top: 10px;
+      }
+      
+      .container {
+        padding: 40px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .card-wrap {
+        margin: 10px;
+        transform: perspective(800px);
+        transform-style: preserve-3d;
+        cursor: pointer;
+      }
+      .card-wrap:hover .card-info {
+        transform: translateY(0);
+      }
+      .card-wrap:hover .card-info p {
+        opacity: 1;
+      }
+      .card-wrap:hover .card-info,
+      .card-wrap:hover .card-info p {
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .card-wrap:hover .card-info:after {
+        transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card-wrap:hover .card-bg {
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 0.8;
+      }
+      .card-wrap:hover .card {
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
+      }
+      
+      .card {
+        position: relative;
+        flex: 0 0 240px;
+        width: 240px;
+        height: 320px;
+        background-color: #333;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+        transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      }
+      
+      .card-bg {
+        opacity: 0.5;
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        pointer-events: none;
+      }
+      
+      .card-info {
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        transform: translateY(40%);
+        transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      .card-info p {
+        opacity: 0;
+        text-shadow: black 0 2px 3px;
+        transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      .card-info * {
+        position: relative;
+        z-index: 1;
+      }
+      .card-info:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        background-blend-mode: overlay;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      }
+      
+      .card-info h1 {
+        font-family: "Playfair Display";
+        font-size: 36px;
+        font-weight: 700;
+        text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+      }
+  </style><!-- cloak style -->
+  <script type="module" crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@peakman/dagger.js@0.9.13/dagger.release.js" defer></script><!-- dagger.js script -->
+  <script type="dagger/configs">
+    {
+      "card": "#template1",
+      "script2": {
+        "uri": "#script1",
+        "anonymous": false
+      }
+    }
+  </script>
+  <script id="script1" type="dagger/script">
+  export const loading = () => ({
+    width: 0,
+    height: 0,
+    mouseX: 0,
+    mouseY: 0,
+    mousePX: 0,
+    mousePY: 0,
+    mouseLeaveDelay: null
+  });
+  
+  export const loaded = ($scope, $node) => {
+    return Promise.resolve().then(() => {
+      $scope.width = $node.offsetWidth;
+      $scope.height = $node.offsetHeight;
+    });
+  };
+  
+  export const styleUpdater = (mousePX, mousePY, $scope) => {
+    return {
+      transform: `translateX(${$scope.mousePX * -40}px) translateY(${
+        $scope.mousePY * -40
+      }px)`,
+      "background-image": `url(${$scope.dataImage})`
+    };
+  };
+  
+  export const handleMouseMove = ($scope, $event, $node) => {
+    $scope.mouseX = $event.pageX - $node.offsetLeft - $scope.width / 2;
+    $scope.mouseY = $event.pageY - $node.offsetTop - $scope.height / 2;
+  };
+  
+  export const handleMouseEnter = ($scope) => {
+    clearTimeout($scope.mouseLeaveDelay);
+  };
+  
+  export const handleMouseLeave = ($scope) => {
+    $scope.mouseLeaveDelay = setTimeout(() => {
+      $scope.mouseX = 0;
+      $scope.mouseY = 0;
+    }, 1000);
+  };
+
+</script>
+<template id="template1">
+  <html>
+    <div class="card-wrap" +loading="$module.script2.loading()" +loaded="$module.script2.loaded($scope, $node)" $watch="mousePX = mouseX / width, mousePY = mouseY / height" +mousemove="$module.script2.handleMouseMove($scope, $event, $node)" +mouseenter="$module.script2.handleMouseEnter($scope)" +mouseleave="$module.script2.handleMouseLeave($scope)">
+        <div class="card" $style="`transform: rotateY(${ mousePX * 30 }deg) rotateX(${ mousePY * -30 }deg)`">
+        <div class="card-bg" $style="$module.script2.styleUpdater(mousePX, mousePY, $scope)"></div>
+        <div class="card-info">
+            <h1>${ $scope.h1 }</h1>
+            <p>${ $scope.p }</p>
+        </div>
+        </div>
+    </div>
+ </html>
+</template>
+
+
+  <h1 class="title">一年四季</h1>
+  
+  <div id="app" class="container">
+    <card +loading="{ dataImage: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F6%2F57047aed2a0ab.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666532463&t=7d555ad830675e70107946e9b2aa497b', h1: '春', p: '胜日寻芳泗水滨，无边光景一时新。' }"></card>
+    <card +loading="{ dataImage: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp378200693.jpg&refer=http%3A%2F%2Fimg2.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666532511&t=4d3b41dd7e33260f6ec15ccc5d650519', h1: '夏', p: '七八个星天外，两三点雨山前。' }"></card>
+    <card +loading="{ dataImage: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F5f98d3ce1a123042bd9de40b3a4405f01380540a243bd-lkN4OX_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666532563&t=dc806cd0f1af89ee9f0dcd459dd91f1e', h1: '秋', p: '照他几许人肠断，玉兔银蟾远不知。' }"></card>
+    <card +loading="{ dataImage: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F201601%2F15%2F20160115091052_wRkMa.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666532588&t=d4d7ab4b67da78e29be0c874301427ea', h1: '冬', p: '人烟寒橘柚，秋色老梧桐。' }"></card>
+  </div>
+
+</html>
